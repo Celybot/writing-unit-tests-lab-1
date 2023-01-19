@@ -63,19 +63,23 @@ const swapCase = (str) => {
 
 // Question 5
 const staggeredCase = (str) => {
-  let newStr = ""
-  for(let i =0; i<str.length; i++){
-    console.log(str[i])
-    console.log(str.charCodeAt(str[i]))
-
+  let regex = /[a-zA-Z]/
+  let newStr = str[0].toUpperCase()
+  let wasSwitched = true
+  for(let i = 1; i < str.length; i++){
+    if(str[i].match(regex)){
+      if(wasSwitched === true){
+        newStr += str[i].toLowerCase()
+        wasSwitched = false
+      } else if (wasSwitched === false){
+        newStr += str[i].toUpperCase()
+        wasSwitched = true
+      }
+    } else {
+      newStr += str[i]
+    }
   }
-  // let regex = [a-zA-Z]
-  // let newStr = str[0].toUpperCase()
-  // for(let i =0; i<str.length; i++){
-  //   if(str[i].match(regex)){
-  //     console.log(str[i])
-  //   }
-  // }
+  return newStr
 }
 console.log(staggeredCase('ignore 77 the 444 numbers'))
 
