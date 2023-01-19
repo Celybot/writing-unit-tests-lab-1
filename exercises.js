@@ -63,6 +63,12 @@ const swapCase = (str) => {
 
 // Question 5
 const staggeredCase = (str) => {
+  let newStr = ""
+  for(let i =0; i<str.length; i++){
+    console.log(str[i])
+    console.log(str.charCodeAt(str[i]))
+
+  }
   // let regex = [a-zA-Z]
   // let newStr = str[0].toUpperCase()
   // for(let i =0; i<str.length; i++){
@@ -96,11 +102,12 @@ const wordLengths = (str) => {
 // // ["Supercalifragilisticexpialidocious 34"]
 // Question 7
 let text = 'D Smoke is humble. The Inglewood native exudes an aura of maturation, needed for his quick ascension into popular culture as the first winner of Rhythm + Flow , Netflix’s hip-hop reality competition centered on the discovery of hip-hop’s next star. His signature authenticity shone throughout the 10-episode series and international audiences were drawn to his charisma as he proudly rapped about his lived experiences as a young black man in Inglewood.';
-const searchWord = (word,text) => {
+const searchWord = (word) => {
   let counter = 0
-  //text = text.toLowerCase().split(' ')
-  for(let i =0 ; i<text.length; i++){
-    if(text[i] === word){
+  let results = ""
+  results = text.toLowerCase().split(' ')
+  for(let i =0 ; i<results.length; i++){
+    if(results[i] === word){
       counter++
     }
   }
